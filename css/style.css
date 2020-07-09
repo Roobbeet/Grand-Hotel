@@ -1,0 +1,750 @@
+/*convert html*/
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'montserrat', sans-serif;
+}
+/*end of common style */
+/* navbar */
+/* sidebar */
+.side-bar {
+    width: 8rem;
+    height: 100%;
+    background-color:#eee;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+/* dropdown */
+.menu-icon {
+    margin-top: 3rem;
+    cursor: pointer;
+}
+.line {
+    height: .2rem;
+    width: 2.5rem;
+    background-color: black;
+    margin-bottom: .6rem;
+}
+.line-1,.line-3 {
+    height: .2rem;
+    width: 1.8rem;
+    transition: all 0.5s;
+}
+.menu-icon:hover .line-1,.menu-icon:hover .line-3 {
+    width: 2.5rem;
+}
+/* end of dropdown */
+.social-icon-list {
+    padding: 0;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+}
+.social-link {
+    color: #828282;
+    font-size: 2rem;
+    padding: 0;
+    transition: color .3s;
+}
+.social-link:hover {
+    color: #deaade;
+}
+.year {
+    font-size: 1.5rem;
+    margin-bottom: 1.1rem;
+    color: #555;
+}
+/* end of sidebar */
+/* Navigation and search */
+.navigation {
+    padding: 0;
+    margin: 0;
+    width: 40rem;
+    background: linear-gradient(to top, rgba(34, 32, 41, 1), rgba(34, 32, 41, .8)) ,url("/img/nav-bg.jpeg") center no-repeat;
+    background-size: cover;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    position: fixed; left: -32rem;
+    align-items: center;
+    transition: left .8s cubic-bezier(1,0,0,1);
+    z-index: 8;
+    /* Navigation ada dibelakang sidebar */
+}
+.navigation-heading {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    letter-spacing: .2rem;
+    color: #deaa86;
+    text-align: center;
+}
+.navigation-search {
+    position: relative;
+}
+.navigation-search-input {
+    font-size: 1.6rem;
+    width: 30rem;
+    padding: 1rem 2rem;
+    background-color: rgba(0,0,0,.3);
+    font-family: 'Josefin Sans', sans-serif;
+    color: #deaa86;
+    letter-spacing: .1rem;
+    outline: none;
+    border: .1rem solid #555;
+    border-radius: 10rem;
+    transition: background-color .5s;
+}
+.navigation-search-input:focus {
+    background-color: rgba(0,0,0,.1);
+}
+.navigation-search-btn {
+   color: #deaa86;
+   background-color: transparent;
+   outline: none;
+   border: none;
+   font-size: 1.8rem;
+   position: absolute; right: .9rem;
+   top: .8rem;
+   cursor: pointer;
+}
+.navigation-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 30rem;
+}
+.navigation-link {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    padding: 0 1rem 0 1rem;
+    font-weight: 300;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    transition: color .5s;
+}
+.navigation-item {
+    position: relative;
+}
+.navigation-link::before {
+    content: "";
+    width: 0rem;
+    height: .1rem;
+    background-color: #deaa86;
+    position: absolute; left: -3rem; top: 1rem;
+    transition: width .5s cubic-bezier(1,0,0,1);
+}
+.navigation-link::after {
+    content: "";
+    width: 0rem;
+    height: .1rem;
+    background-color: #deaa86;
+    position: absolute; right: -3rem; top: 1rem;
+    transition: width .5s cubic-bezier(1,0,0,1);
+}
+.navigation-item:hover .navigation-link{
+    color: #deaa86;
+}
+.navigation-link:hover::before,
+.navigation-link:hover::after {
+    width: 3rem;
+}
+.copyright {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+/* navigation left-right */
+.checkbox:checked ~ .navigation {
+    left: 8rem;
+    transition: left .8s cubic-bezier(1,0,0,1);
+}
+/* transition for lines */
+.checkbox:checked ~ .side-bar .line-1{
+    transform: rotate(-405deg) translate(-5px, 6px);
+    width: 2.8rem;
+}
+.checkbox:checked ~ .side-bar .line-3 {
+    transform: rotate(405deg) translate(-5px, -6px); 
+    width: 2.8rem;
+}
+.checkbox:checked ~ .side-bar .line-2 {
+    background-color: transparent;
+    transition: background-color .5s;
+}
+/* end of navbar */
+
+/* Header */
+header {
+    margin-left: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,.5)) ,url("/img/header-1.jpeg") left no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.Main-Link {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    color: #deaa86;
+    z-index: 7;
+    text-decoration: none;
+}
+.Hotel-Heading {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.7rem;
+    letter-spacing: .2rem;
+    font-weight: 400;
+    text-decoration: none;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.welcome-header {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 6.5rem;
+    font-weight: 400;
+    letter-spacing: .2rem;
+    padding: 0;
+    margin: 10rem 0 0 0;
+    animation-name: Welcome-Header;
+    animation-duration: .6s;
+}
+.content > p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 4rem;
+    font-weight: 300;
+    letter-spacing: .1rem;
+    color: transparent;
+    text-align: center;
+    animation-name: Welcome-Header;
+    animation-duration: .6s;
+    animation-delay: .6s;
+    animation-fill-mode: forwards;
+}
+.checkout-btn {
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    background: linear-gradient(to right, rgba(230,200,34,1), rgba(247,185,0,1));
+    border-style: none;
+    padding: 1.2rem 5rem;
+    border-radius: 5rem;
+    animation-name: checkout-btn;
+    animation-duration: .6s;
+    animation-delay: 1.2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    cursor: pointer;
+}
+.checkout-btn:hover {
+    top: 2rem;
+    background: linear-gradient(to left, rgba(230,200,34,1), rgba(247,185,0,1));
+}
+.checkout-btn:active {
+    position: relative;
+    top: .3rem;
+}
+/* animation for header contents */
+@keyframes Welcome-Header {
+    from {color: transparent;
+    }
+    to {
+        color: white;
+    }
+}
+@keyframes checkout-btn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* end of Header */
+
+/* About Us */
+.about-us {
+    background-color: #d9d9d9;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* width: 50%; */
+    height: 79vh;
+    margin: 0 0 0 8rem;
+    margin-right: 0;
+}
+.about-words {
+    flex: 0 1 50%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.about-words > h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    letter-spacing: 0rem;
+    font-size: 3.8rem;
+    margin-bottom: 3rem ;
+}
+.a-line {
+    background-color: #c47900;
+    height: .1rem;
+}
+.short {
+    margin-bottom: .5rem;
+    width: 10rem;
+}
+.long {
+    margin-top: .5rem;
+    width: 20rem;
+    outline: none;
+    height: .05rem;
+}
+.about-words > h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    letter-spacing: .1rem;
+    font-size: 3.4rem;
+    color: #c47900;
+}
+.about-words > p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    letter-spacing: .1rem;
+    font-size: 1.5rem;
+    font-style: italic;
+    text-align: center;
+    width: 70vh;
+    margin-bottom: 5rem;
+}
+.Read-more-btn {
+    background-color: transparent;
+    outline: none;
+    border: solid .1rem #c47900;
+    color:#c47900;
+    width: 15rem;
+    padding: .8rem;
+    cursor: pointer;
+}
+.Read-more-btn > i {
+    padding-left: .8rem;
+    transition: padding .5s;
+}
+.Read-more-btn:hover i{
+    padding: 0 0 0 1.7rem;
+    /* position: relative; left: 1rem; */
+}
+.gallery {
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* justify-content: flex-start; */
+    flex: 1 1;
+    position: relative;
+    background-color: #d9d9d9;
+    margin: 0;
+    padding: 0;
+}
+.about-img {
+    /* display: none; */
+    /* position: absolute; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: solid .2rem #dba10f;
+    width: 300px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    box-shadow: -3rem 3rem 2.5rem rgba(0,0,0,.15), 3rem 3rem 2.5rem rgba(0,0,0,.15);
+}
+.img-1 {
+    z-index: 1;
+    transform: translate(-20%, -90%);
+    /* top: 11rem; left: 36rem; */
+}
+.img-2 {
+    z-index: 2;
+    transform: translate(-70%, -70%);
+    /* top: 15rem; right: 9rem; */
+}
+.img-3 {
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    /* top: -1.8rem; left: 27rem; */
+}
+.img-4 {
+    z-index: 4;
+    transform: translate(-30%, -30%);
+    /* top: 2rem; left: 2rem; */
+}
+/* end of About Us */
+/* Room-section */
+.Room-section {
+    margin-left: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Room-header {
+    margin: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Room-header > h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 4rem;
+    color: #c97c00;
+    text-align: center;
+}
+.Card-line {
+    background-color: #c47900;
+    height: .1rem;
+}
+.short {
+    margin-bottom: .5rem;
+    width: 10rem;
+}
+.long {
+    width: 20rem;
+    height: .2rem;
+}
+/* Room Card */
+.Room-card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    flex-shrink: 10;
+}
+.Room {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0,0,0,.9);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin: 1rem 0 8rem 0;
+    box-shadow: 3.5rem 0rem 3rem rgba(0,0,0,.15),
+    -3.5rem 0rem 3rem rgba(0,0,0,.15),
+    0rem 4rem 2rem rgba(0,0,0,.15);
+    width: 60rem;
+}
+.Room-image {
+    width: 100%;
+}
+.Room-book {
+    padding: .5rem 2rem 2rem 2rem;
+}
+.Single, .Lux {
+    margin-left: 1.3rem;
+}
+.Double, .VIP {
+    margin-right: 1.5rem;
+}
+.Room-name {
+    margin: 1rem 0rem;
+    padding: 0;
+    font-weight: 200;
+    font-size: 3rem;
+    letter-spacing: .2;
+}
+.lorem {
+    color: grey;
+    font-size: 1.6rem;
+    padding: 0 0 1rem 0;
+}
+.price {
+    font-weight: 300;
+    font-size: 4.5rem;
+    text-align: right;
+    margin: auto;
+}
+.book-btn {
+    text-transform: uppercase;
+    background-color: transparent;
+    color: #c97c00;
+    outline: none;
+    padding: 1.5rem 3rem;
+    border: solid .1rem #c97c00;
+    border-radius: 5rem;
+}
+.Check-all {
+    text-transform: uppercase;
+    background-color: white;
+    outline: none;
+    border: solid .2rem #c97c00;
+    padding: 1.6rem 3.2rem;
+    margin: 0 0 4rem 0;
+    color: #c97c00;
+    cursor: pointer;
+    transition: background-color .3s, color .3s;
+}
+.Check-all:hover {
+    background-color: #c97c00;
+    color: white;
+}
+/* End of Room Card */
+/* end of Room-section */
+/* Customer Section */
+.Customer-section {
+    margin-left: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(0,0,0,.95);
+}
+.Cust-Header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #c97c00;
+    padding-top: 4rem;
+}
+.Our-Cust {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem;
+    font-weight: 300;
+    
+}
+.cust-line {
+    background-color: #c97c00;
+}
+.c-short {
+    width: 10rem;
+    margin-bottom: .75rem;
+    height: .15rem;
+}
+.c-long {
+    width: 20rem;
+    height: .05rem;
+}
+.cust {
+    color: white;
+    font-size: 2rem;
+    font-weight: 200;
+    text-align: center;
+    width: 55%;
+    padding: 6rem 3rem;
+}
+.Cust-Testi {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Montserrat', sans-serif;
+    justify-content: space-between;
+    width: 100%;
+}
+.Cust-comment {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: white;
+    justify-content: flex-start;
+    width: 600px;
+    align-items: center;
+    margin-bottom: 8rem;
+}
+.Helen {
+    margin-left: 7.5rem;
+}
+.Monica {
+    margin-right: 7.5rem;
+}
+.cust-pict {
+    height: 130px;
+    position: relative;
+    left: -1.5rem;
+}
+.comment {
+    padding: 2rem 2rem 2rem 0;
+}
+.comment > h3 {
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 0;
+}
+.happy {
+    font-size: 1.2rem;
+    color: #c97c00;
+    font-style: italic;
+}
+.cust-lorem {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin: 0;
+}
+.cust-lorem::before, .cust-lorem::after {
+ content: "''";
+}
+/* End of Customer Section */
+/* Footer Section */
+.footer {
+    margin-left: 8rem;
+    font-family: 'Montserrat', sans-serif;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #1f1f1f;
+    color: #d1d1d1;
+    padding: 6rem 5rem;
+}
+.common-heading {
+    font-size: 3rem;
+    font-weight: 300;
+    color: goldenrod;
+}
+.footer-p {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+.footer-img {
+    height: 80px;
+    margin: .5rem;
+    transition: transform .5s;
+}
+.footer-img:hover {
+   transform: scale(1.5);
+}
+.gallery-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 450px;
+}
+.img-wrapper {
+    height: 80px;
+    overflow: hidden;
+}
+.Email {
+    outline: none;
+    margin-top: 2.6rem;
+}
+.News-email {
+    outline: none;
+    padding: .9rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.7rem;
+    width: 25rem;
+    border: none;
+}
+.Sign-up-btn {
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    height: 36px;
+    background-color: rgb(180, 129, 0);
+    border: none;
+    position: relative; left: -.45rem;
+    color: #d1d1d1;
+    cursor: pointer;
+}
+.footer-copyright {
+    display: flex;
+    background-color: black;
+    color: white;
+    justify-content: space-between;
+    padding: .6rem 4rem .6rem 4rem;
+    font-size: .8rem;
+
+}
+span {
+    color: goldenrod;
+}
+/* End of Footer Section */
+/* End of Index page */
+/* Media queries */
+@media(max-width: 1450px) {
+    .about-us {
+        display: flex;
+        flex-direction: column;
+    }
+    .gallery {
+        display: none;
+    }
+    .Cust-Testi {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .Helen, .Monica {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }  
+}
+@media(max-width: 850px) {
+    .welcome-header {
+        text-align: center;
+    }
+}
+@media(max-width: 740px) {
+    .Room, .Room-image {
+        max-width: 400px;
+        padding-left: 0; padding-right: 0;
+        margin-right: 0; margin-left: 0;
+    }
+    .Helen, .Monica {
+        max-width: 400px;
+    }
+}
+@media(max-width: 550px) {
+    .about-words > p {
+        max-width: 200px;
+        padding-bottom: 0;
+        margin-bottom: 1.5rem;
+    }
+    .Room, .Room-image {
+        max-width: 200px;
+    }
+    .price {
+        font-size: 2rem;
+    }
+    .book-btn {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+    .welcome-header {
+        font-size: 4rem;
+    }
+    .footer-copyright {
+        display: flex;
+        flex-direction: column;
+    }
+    .about-words > h2 {
+        margin-bottom: 0;
+    }
+}
