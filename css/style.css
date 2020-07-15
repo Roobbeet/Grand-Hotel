@@ -197,7 +197,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,.5)) ,url("/img/header-1.jpeg") left no-repeat;
+    background: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,.5)) ,url("https://raw.githubusercontent.com/Roobbeet/RobertusBimo/master/img/header-1.jpeg") left no-repeat;
     background-size: cover;
     height: 100vh;
 }
@@ -746,5 +746,20 @@ span {
     }
     .about-words > h2 {
         margin-bottom: 0;
+    }
+}
+
+@media(max-width: 380px) {
+    .Cust-comment {
+        display: block;
+        width: 200px;
+        font-size: .5rem;
+    }
+    .comment {
+        width: 50 px;
+        font-size: 1rem;
+    }
+    .News-email {
+        width: 100px;
     }
 }
