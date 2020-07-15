@@ -762,4 +762,10 @@ span {
     .News-email {
         width: 100px;
     }
+    .navigation-search-input {
+        width: 150px;
+    }
+    .navigation {
+        width: 30rem;
+    }
 }
