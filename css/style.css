@@ -720,6 +720,33 @@ span {
     .Helen, .Monica {
         max-width: 400px;
     }
+    .about-us {
+        height: 100vh;
+    }
+    .Hotel-Heading {
+        font-size: 3rem;
+        padding: 0;
+        margin: 0;
+    }
+    .content > p {
+        padding: 0;
+        margin: auto;
+    }
+    .content {
+        position: relative;
+        top: -3rem;
+    }
+    .about-words > h2 {
+        font-size: 3rem;
+        margin: 0;
+    }
+    .about-words > p {
+        font-size: 1.2rem;
+        margin: 1rem 0;
+    }
+    .about-words > h1 {
+        margin-bottom: 1rem;
+    }
 }
 @media(max-width: 550px) {
     .about-words > p {
